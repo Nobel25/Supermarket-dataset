@@ -35,21 +35,29 @@ This dataset was obtained a third party given to me Neovarsity Institution
 9.	I cleaned up text columns such as Customer Name (trim spaces).
 
 #### Step-by-step inside Power Query:
-•	Home → Transform Data (open Power Query).
-•	Remove Row ID:
-   o	Right-click on Row ID column → Remove.
-•	Set Data Types:
-   o	Click each column’s small icon (e.g., 123, ABC).
-   o	Assign Date to Order Date and Ship Date.
-   o	Assign Decimal Number to Sales, Profit, Discount, Quantity.
-•	Trim and Clean Text:
-   o	Select multiple text columns → Transform tab → Format → Trim → then again Format → Clean.
-•	Remove Duplicates:
-   o	Highlight Order ID and Product Name → Remove Duplicates.
-•	Replace Nulls:
-   o	Select columns like Discount → Transform tab → Replace Values → Replace null with 0.
-•	Add Order Year Column (Optional):
-  o	Select Order Date → Add Column tab → Date → Year → Year.
+
+-	Home → Transform Data (open Power Query).
+
+-	Remove Row ID:
+    *	Right-click on Row ID column → Remove.
+ 	
+-	Set Data Types:
+
+    *	Click each column’s small icon (e.g., 123, ABC).
+    *	Assign Date to Order Date and Ship Date.
+    *	Assign Decimal Number to Sales, Profit, Discount, Quantity.
+   
+-	Trim and Clean Text:
+    *	Select multiple text columns → Transform tab → Format → Trim → then again Format → Clean.
+ 	
+-	Remove Duplicates:
+    *	Highlight Order ID and Product Name → Remove Duplicates.
+ 	
+-	Replace Nulls:
+    *	Select columns like Discount → Transform tab → Replace Values → Replace null with 0.
+ 	
+-	Add Order Year Column (Optional):
+    *	Select Order Date → Add Column tab → Date → Year → Year.
 
 
 ### Exploratory Analysis
@@ -82,20 +90,21 @@ Visual Reports:
 
   ### Data Analysis
   1. I went back to the main Power BI canvas
-      •	Click Home → Close & Apply (after cleaning in Power Query).
- 2.  Create Calculated Measures (KPIs)
-      Use DAX (Data Analysis Expressions) for advanced KPIs:
+      -	Click Home → Close & Apply (after cleaning in Power Query).
+ 2.  Create Calculated Measures (KPIs).
+    
+     I Used DAX (Data Analysis Expressions) for advanced KPIs:
 
-     •	Total Sales:
-           Total Sales = SUM('Orders'[Sales])
-     •	Maximum of Sales:
-           Max Sales = MAX('Orders'[Sales])
-     •	Average Sales:
-          Average Sales = AVERAGE('Orders'[Sales])
+     -	Total Sales:
+           * Total Sales = SUM('Orders'[Sales])
+     -	Maximum of Sales:
+           * Max Sales = MAX('Orders'[Sales])
+     -	Average Sales:
+           * Average Sales = AVERAGE('Orders'[Sales])
      
- 3.    Once created:
-     •	Insert Card Visuals → Drag each measure into a Card → Set titles (e.g., "Total Sales".
- 4. Create Visual Reports:
+ 4.    Once created:
+     -	Insert Card Visuals → Drag each measure into a Card → Set titles (e.g., "Total Sales".
+ 5. Create Visual Reports:
     
       * Report                    - Chart Type   	  - Fields
     
@@ -105,10 +114,11 @@ Visual Reports:
      - Sales by Ship Mode       - Donut Chart	   - Ship Mode (Legend), Sales
      - Sales by Region	         - Bar Chart      -	Region (Axis), Sales (Values)
    
-       I added slicers for:
-   •	Region
-   •	Order Date
-   •	Category
+   I added slicers for:
+   
+   -	Region
+   -	Order Date
+   -	Category
 
 5. Create the KPIs (DAX Measures)
 I went to the Modeling tab → Click New Measure, and enter:
@@ -119,9 +129,9 @@ Total Profit = SUM('Orders'[Profit])
 
 Total Quantity = SUM('Orders'[Quantity])
 I inserted Card Visuals for both:
-    •	Card 1: Drag Total Profit
-    •	Card 2: Drag Total Quantity
-    •	Rename their titles accordingly
+    -	Card 1: Drag Total Profit
+    -	Card 2: Drag Total Quantity
+    -	Rename their titles accordingly
 
 
 6. Create Visual Reports
@@ -140,8 +150,8 @@ I inserted Card Visuals for both:
 - Profit by Sub-Category-	Horizontal Bar Chart-	Axis: Sub-Category, 
                                                 Values: Profit
 
-   - I used slicers (filters) for:
-    •	Region
-    •	Category
-    •	Year
+   I used slicers (filters) for:
+   -	Region
+   -	Category
+   -	Year
 
